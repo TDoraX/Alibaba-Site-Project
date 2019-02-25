@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+@import "font";
+@import "mixin";
+
+.clearfix:after {
+    content: '.';
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    overflow: hidden;
+    *zoom: 1;
+}
+
+.html, .body, a {
+    font: 12px/1.5 'Hiragino Sans GB','microsoft yahei',arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.block-g {
+    width: 100%;
+    background: rgb(242, 242, 242);
+}
+
+footer {
+    width: 100%;
+    background: rgb(18, 18, 18);
+}
+a {
+    text-decoration: none;
+    color: #555;
+    &:hover {
+        color: #ff7300;
+    }
+}
+
+.arrow-down {
+    background: url("../img/arrow.png") right 6px no-repeat;
+}

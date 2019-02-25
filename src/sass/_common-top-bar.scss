@@ -1,0 +1,61 @@
+@charset "UTF-8";
+.top-bar {
+    @include border-box;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    .top-bar-l {
+        .mobile, .top-info {
+            float: left;
+            li {
+                float: left;
+                padding-right: 10px;
+            }
+            .bonus {
+                padding-left: 15px;
+                background: url("../img/hongbao.png") left center no-repeat;
+            }
+        }
+        .mobile {
+            padding-left: 16px;
+            background: url("../img/alibar.png") 0 -112px no-repeat;
+        }
+    }
+    .top-bar-r {
+        li {
+            position: relative;
+            float: right;
+            background: url("../img/alibar.png") right -145px no-repeat;
+            &:first-of-type {
+                background: transparent;
+            }
+            div {
+                padding: 0 12px;
+            }
+            a {
+                @include inline-block;
+                padding-right: 12px;
+            }
+            i {
+                display: block;
+                float: left;
+                font-size: 14px;
+                margin: -2px 2px 0 0;
+            }
+            #product-num {
+                @include inline-block;
+                width: 15px;
+                height: 15px;
+                line-height: 15px;
+                margin: -4px 2px 0;
+                background: url("../img/alibar.png") 0 0 no-repeat;
+                em {
+                    color: #fff;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}

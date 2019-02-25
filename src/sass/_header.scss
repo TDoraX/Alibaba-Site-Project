@@ -1,0 +1,113 @@
+@charset "UTF-8";
+header {
+    position: relative;
+    margin-top: 10px;
+    padding-top: 30px;
+    height: 74px;
+    .logo {
+        float: left;
+        width: 200px;
+        height: 38px;
+        background: url("../img/logo.png");
+    }
+    .search-bar {
+        @include border-box;
+        float: left;
+        position: relative;
+        margin: 5px 0 0 90px;
+        width: 620px;
+        height: 40px;
+        border: 2px solid #ff6000;
+        .search-list {
+            float: left;
+            position: relative;
+            height: 36px;
+            span {
+                width: 8px;
+                height: 4px;
+                position: absolute;
+                top: 17px;
+                right: 15px;
+                background: url("../img/arrow.png") no-repeat;
+            }
+            ul {
+                overflow: hidden;
+                float: left;
+                margin-bottom: 5px;
+                height: 36px;
+                border-right: 1px solid #eee;
+                background: #fff;
+                li {
+                    width: 78px;
+                    a {
+                        display: block;
+                        color: #333;
+                        height: 100%;
+                        line-height: 36px;
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+        .search-box {
+            float: left;
+            input {
+                display: block;
+                width: 421px;
+                height: 24px;
+                line-height: 24px;
+                padding: 6px 0 6px 10px;
+                border: 0;
+            }
+        }
+        button {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 98px;
+            height: 36px;
+            line-height: 36px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #ff6000;
+            border: none;
+            cursor: pointer;
+        }
+    }
+    .ask-price {
+        float: left;
+        margin-top: 5px;
+        margin-left: 20px;
+        border: 1px solid #ddd;
+        a {
+            display: block;
+            width: 98px;
+            color: #555;
+            height: 28px;
+            line-height: 28px;
+            font-size: 13px;
+            text-align: center;
+            &:hover {
+                color: #ff7300;
+            }
+        }
+        background-color: #fff;
+        padding: 5px 0;
+    }
+    .qrcode {
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        z-index: 1000;
+        right: 0;
+        top: 0;
+        width: 110px;
+        color: #888;
+        img {
+            position: relative;
+            top: 5px;
+            left: 15px;
+        }
+    }
+}
