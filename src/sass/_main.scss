@@ -1,0 +1,83 @@
+.main {
+    aside {
+        // The left menu
+        &.left {
+            float: left;
+            width: 200px;
+            height: 550px;
+            margin-top: 20px;
+
+            #subnav {
+                li::after {
+                    @include clear-fix-after;
+                }
+
+                li {
+                    @include clear-fix;
+                    span {
+                        width: 6px;
+                    }
+                }
+
+                width: 200px;
+                font-size: 0;
+                padding: 12px 0;
+                background: #fff;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .06);
+
+                a {
+                    float: left;
+                    height: 28px;
+                    line-height: 28px;
+                    font-size: 14px;
+                    white-space: nowrap;
+                    color: #333;
+                }
+
+                span {
+                    display: block;
+                    float: left;
+                    height: 28px;
+                    line-height: 28px;
+                    font-size: 14px;
+                    white-space: nowrap;
+                    color: #333;
+                }
+
+                i {
+                    float: left;
+                    margin: 0 14px 0 4px;
+                    line-height: 28px;
+                    text-align: center;
+                }
+            }
+        }
+
+        // The right block
+        &.right {
+            float: left;
+            width: 260px;
+            height: 530px;
+            margin-top: 20px;
+        }
+    }
+
+    // The center block
+    article.center {
+        float: left;
+        width: 740px;
+        height: 550px;
+
+        .center-top {
+            width: 700px;
+            height: 300px;
+            margin: 20px auto 0;
+        }
+
+        .center-bottom {
+            width: 700px;
+            height: 210px;
+            margin: 20px 20px 0;
+        }
+    }
+}

@@ -5,20 +5,18 @@
 @import "font";
 @import "mixin";
 
-.clearfix:after {
-    content: '.';
-    display: block;
-    visibility: hidden;
-    height: 0;
-    clear: both;
+$orange: #ff7300;
+
+
+.clearfix::after {
+    @include clear-fix-after;
 }
 .clearfix {
-    overflow: hidden;
-    *zoom: 1;
+    @include clear-fix;
 }
 
 .html, .body, a {
-    font: 12px/1.5 'Hiragino Sans GB','microsoft yahei',arial,sans-serif;
+    font: 12px/1.5 'Hiragino Sans GB', 'microsoft yahei', arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -36,11 +34,13 @@ footer {
     width: 100%;
     background: rgb(18, 18, 18);
 }
+
 a {
     text-decoration: none;
     color: #555;
+
     &:hover {
-        color: #ff7300;
+        color: $orange;
     }
 }
 

@@ -45,6 +45,6 @@ function minifyImg() {
 
 exports.default = series(runSass, minifyHTML, operateJS, minifyImg);
 
-watch('src/*.html', minifyHTML);
-watch('src/sass/*.scss', runSass);
-watch('src/script/js/*.js', operateJS);
+watch('src/*.html', {delay: 500}, minifyHTML);
+watch('src/sass/*.scss', {delay: 500}, runSass);
+watch('src/script/js/*.js', {delay: 500}, operateJS);

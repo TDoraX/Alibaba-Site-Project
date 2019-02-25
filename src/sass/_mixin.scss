@@ -4,3 +4,16 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+@mixin clear-fix-after {
+    content: '.';
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+
+@mixin clear-fix {
+    overflow: hidden;
+    *zoom: 1;
+}

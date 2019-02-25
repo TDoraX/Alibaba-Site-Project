@@ -4,12 +4,14 @@ header {
     margin-top: 10px;
     padding-top: 30px;
     height: 74px;
+
     .logo {
         float: left;
         width: 200px;
         height: 38px;
         background: url("../img/logo.png");
     }
+
     .search-bar {
         @include border-box;
         float: left;
@@ -18,10 +20,12 @@ header {
         width: 620px;
         height: 40px;
         border: 2px solid #ff6000;
+
         .search-list {
             float: left;
             position: relative;
             height: 36px;
+
             span {
                 width: 8px;
                 height: 4px;
@@ -30,6 +34,7 @@ header {
                 right: 15px;
                 background: url("../img/arrow.png") no-repeat;
             }
+
             ul {
                 overflow: hidden;
                 float: left;
@@ -37,8 +42,10 @@ header {
                 height: 36px;
                 border-right: 1px solid #eee;
                 background: #fff;
+
                 li {
                     width: 78px;
+
                     a {
                         display: block;
                         color: #333;
@@ -49,8 +56,10 @@ header {
                 }
             }
         }
+
         .search-box {
             float: left;
+
             input {
                 display: block;
                 width: 421px;
@@ -60,6 +69,7 @@ header {
                 border: 0;
             }
         }
+
         button {
             display: block;
             position: absolute;
@@ -75,11 +85,13 @@ header {
             cursor: pointer;
         }
     }
+
     .ask-price {
         float: left;
         margin-top: 5px;
         margin-left: 20px;
         border: 1px solid #ddd;
+
         a {
             display: block;
             width: 98px;
@@ -88,13 +100,16 @@ header {
             line-height: 28px;
             font-size: 13px;
             text-align: center;
+
             &:hover {
                 color: #ff7300;
             }
         }
+
         background-color: #fff;
         padding: 5px 0;
     }
+
     .qrcode {
         overflow: hidden;
         display: block;
@@ -104,6 +119,7 @@ header {
         top: 0;
         width: 110px;
         color: #888;
+
         img {
             position: relative;
             top: 5px;
