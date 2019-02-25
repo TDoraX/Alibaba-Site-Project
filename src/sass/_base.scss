@@ -6,6 +6,7 @@
 @import "mixin";
 
 $orange: #ff7300;
+$silver: #f7f7f7;
 
 
 .clearfix::after {
@@ -15,9 +16,8 @@ $orange: #ff7300;
     @include clear-fix;
 }
 
-.html, .body, a {
-    font: 12px/1.5 'Hiragino Sans GB', 'microsoft yahei', arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
+.html, .body, a, span, em {
+    @include font-init;
 }
 
 .container {

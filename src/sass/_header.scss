@@ -19,7 +19,7 @@ header {
         margin: 5px 0 0 90px;
         width: 620px;
         height: 40px;
-        border: 2px solid #ff6000;
+        border: 2px solid $orange;
 
         .search-list {
             float: left;
@@ -80,7 +80,7 @@ header {
             line-height: 36px;
             font-size: 16px;
             color: #fff;
-            background-color: #ff6000;
+            background-color: $orange;
             border: none;
             cursor: pointer;
         }
@@ -102,7 +102,7 @@ header {
             text-align: center;
 
             &:hover {
-                color: #ff7300;
+                color: $orange;
             }
         }
 

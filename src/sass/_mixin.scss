@@ -17,3 +17,8 @@
     overflow: hidden;
     *zoom: 1;
 }
+
+@mixin font-init {
+    font: 12px/1.5 'Hiragino Sans GB','microsoft yahei',arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+}

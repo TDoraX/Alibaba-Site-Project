@@ -14,6 +14,7 @@
 
                 li {
                     @include clear-fix;
+
                     span {
                         width: 6px;
                     }
@@ -59,6 +60,218 @@
             width: 260px;
             height: 530px;
             margin-top: 20px;
+
+            .right-top {
+                height: 300px;
+                background: #fff;
+
+                .user-info {
+                    overflow: hidden;
+                }
+
+                .avatar {
+                    margin: 13px auto 5px;
+
+                    img {
+                        display: block;
+                        margin: 0 auto;
+                        width: 36px;
+                        height: 36px;
+                        @include border-radius(50%);
+                    }
+                }
+
+                .info-welcome {
+                    p {
+                        margin-bottom: 3px;
+                        height: 12px;
+                        line-height: 12px;
+                        text-align: center;
+                        font-size: 12px;
+
+                        a {
+                            margin-left: 8px;
+                            color: #000;
+                        }
+                    }
+                }
+
+                .info-reward {
+                    a {
+                        display: inline-block;
+                        margin-left: 36px;
+                        height: 14px;
+                        text-align: left;
+                        color: $orange;
+
+                        &::before {
+                            content: '';
+                            display: inline-block;
+                            width: 16px;
+                            height: 13px;
+                            margin-right: 3px;
+                            position: relative;
+                            top: 1px;
+                            background: url("../img/id_card.png") no-repeat;
+                        }
+                    }
+
+                    #reward_num {
+                        margin-left: 10px;
+                        color: #999;
+                        @include font-init;
+
+                    }
+                }
+
+                .introduce {
+                    position: relative;
+                    height: 22px;
+                    font-size: 12px;
+                    line-height: 22px;
+                    margin: 6px 22px 0;
+                    color: #999;
+                    padding: 0 6px;
+                    background-color: $silver;
+
+                    .triangle {
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        left: 15px;
+                        top: -6px;
+                        border-left: 8px solid transparent;
+                        border-right: 8px solid transparent;
+                        border-bottom: 8px solid $silver;
+                    }
+                }
+
+                .buttons {
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+                    padding: 0 20px;
+
+                    #btn-login {
+                        background: $orange !important;
+                        color: #fff;
+                    }
+
+                    #btn-register {
+                        background: #fff !important;
+                        color: $orange;
+                        border: 1px solid #f66100 !important;
+                    }
+
+                    #btn-login, #btn-register {
+                        box-sizing: border-box;
+                        display: block;
+                        width: 105px;
+                        height: 30px;
+                        line-height: 30px;
+                        font-size: 14px;
+                        text-align: center;
+                        background-color: $silver;
+                        border-left: none;
+                    }
+                }
+
+                .promise-icon {
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 20px;
+                    padding: 0 10px;
+                    width: 220px;
+                    height: 61px;
+                    box-sizing: border-box;
+                    border-bottom: none;
+                    a {
+                        width: 25px;
+                        display: block;
+                        background-repeat: no-repeat;
+                        background-image: url("../img/sprite_0.png");
+                        height: 60px;
+                        float: left;
+                    }
+
+                    .icon-bao {
+                        background-position: -9px -186px;
+                    }
+
+                    .icon-zhi {
+                        background-position: -9px -186px;
+                    }
+
+                    .icon-zheng {
+                        background-position: -212px -186px;
+                    }
+
+                    .icon-she {
+                        background-position: -316px -186px;
+                    }
+                }
+
+                .promise-btns {
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: space-between;
+                    height: 84px;
+                    .promise-item {
+                        box-sizing: border-box;
+                        position: relative;
+                        float: left;
+                        padding-top: 15px;
+                        width: 48px;
+                        height: 85px;
+                        border: 1px solid #f1f1f1;
+                        z-index: 2;
+                        background: #fff;
+                        border-left-color: transparent;
+                        text-align: center;
+                        flex-grow: 1;
+                        &:first-of-type {
+                            border-left-color: #fff;
+                        }
+                        &:nth-of-type(2) {
+                            position: relative;
+                        }
+                        .item-icon-1, .item-icon-2, .item-icon-3, .item-icon-4 {
+                            background-image: url("../img/sprite_0.png");
+                            width: 24px;
+                            height: 34px;
+                            margin: 0 auto 6px;
+                        }
+                        .item-icon-1 {
+                            background-position: -9px -266px;
+                        }
+                        .item-icon-2 {
+                            background-position: -113px -266px;
+                        }
+                        .item-icon-3 {
+                            background-position: -218px -266px;
+                        }
+                        .item-icon-4 {
+                            background-position: -418px -266px;
+                        }
+                        .hot {
+                            display: block;
+                            width: 14px;
+                            height: 14px;
+                            background: url("../img/hot.png");
+                            position: absolute;
+                            top: 0;
+                            left: -1px;
+                        }
+                    }
+                }
+            }
+
+            .right-bottom {
+                margin-top: 20px;
+                height: 209px;
+            }
         }
     }
 
@@ -72,12 +285,24 @@
             width: 700px;
             height: 300px;
             margin: 20px auto 0;
+
+            .slide-show {
+                width: 100%;
+                height: 100%;
+                background: #aaa;
+            }
         }
 
         .center-bottom {
             width: 700px;
             height: 210px;
             margin: 20px 20px 0;
+
+            .sub-slide {
+                width: 100%;
+                height: 100%;
+                background: #aaa;
+            }
         }
     }
 }
