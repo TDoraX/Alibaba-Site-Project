@@ -4,6 +4,7 @@
 @import "compass/utilities";
 @import "font";
 @import "mixin";
+@import "lofty";
 
 $orange: #ff7300;
 $silver: #f7f7f7;
@@ -18,6 +19,10 @@ $silver: #f7f7f7;
 
 .html, .body, a, span, em {
     @include font-init;
+}
+
+.html {
+    background: #fff;
 }
 
 .container {

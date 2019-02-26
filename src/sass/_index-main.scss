@@ -269,8 +269,107 @@
             }
 
             .right-bottom {
+                background: #fff;
                 margin-top: 20px;
                 height: 209px;
+                .news-info {
+                    ul {
+                        &.help_tab_title {
+                            @include border-box;
+                            position: relative;
+                            font-size: 0;
+                            border-bottom: none;
+                            text-align: justify;
+                            padding: 0;
+                            margin: 0;
+                            li {
+                                box-sizing: border-box;
+                                float: left;
+                                margin: 0!important;
+                                width: 65px!important;
+                                height: 45px;
+                                text-align: center;
+                                background: $silver;
+                                border-right: 1px solid #ededed;
+                                padding: 0;
+                                font: inherit;
+                                font-size: 100%;
+                                vertical-align: baseline;
+                                a {
+                                    font-size: 12px;
+                                    color: #888;
+                                    line-height: 45px;
+                                    clear: both;
+
+                                }
+                            }
+                        }
+                    }
+                    .help_tab_body {
+                        @include border-box;
+                        margin: 0 auto;
+                        font-size: 0;
+                        width: 100%;
+                        height: 88px !important;
+                        padding: 0;
+                        .help_ali_reg {
+                            padding: 8px 0 0 22px;
+                            a {
+                                font-size: 12px;
+                                display: block;
+                                height: 24px;
+                                line-height: 24px;
+                                overflow: hidden;
+                                width: 206px;
+                                color: #555;
+                            }
+                        }
+                    }
+                    #hp_toutiao {
+                        padding: 14px 0;
+                        margin: 0 20px;
+                        border-top: 1px dashed #e2e2e2;
+                        height: 14px;
+                        line-height: 14px;
+                        overflow: hidden;
+                        .toutiaoLabel {
+                            width: 64px;
+                            float: left;
+                            height: 15px;
+                            background-image: url(https://img.alicdn.com/tfs/TB1KDf1jMTqK1RjSZPhXXXfOFXa-118-28.png);
+                            background-size: 100%;
+                        }
+                        .toutiaoList {
+                            float: left;
+                            width: 140px;
+                            margin-left: 8px;
+                            .toutiaoItem {
+                                @include text-overflow;
+                                margin-bottom: 16px;
+                                a {
+                                    color: #555;
+                                }
+                            }
+                        }
+                    }
+                    .hp_report {
+                        width: 100%;
+                        height: 32px;
+                        line-height: 32px;
+                        text-align: center;
+                        .hp_report_link {
+                            display: block;
+                            color: #f77400;
+                            line-height: 32px;
+                            font-size: 12px;
+                            background-color: #fef4f1;
+                            .right_arrow {
+                                margin-left: 2px;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

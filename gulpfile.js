@@ -24,7 +24,7 @@ function runSass() {
 
 function minifyHTML() {
     return src('src/*.html')
-        .pipe(html())
+        .pipe(html({collapseWhitespace: true}))
         .pipe(dest('dist/'));
 }
 
@@ -43,8 +43,15 @@ function minifyImg() {
         .pipe(dest('dist/img/'));
 }
 
-exports.default = series(runSass, minifyHTML, operateJS, minifyImg);
+function watchOn() {
+    watch('src/*.html', {delay: 500}, minifyHTML);
+    watch('src/sass/*.scss', {delay: 500}, runSass);
+    watch('src/script/js/*.js', {delay: 500}, operateJS);
+    watch('src/img/*', {delay: 500}, minifyImg);
+}
 
-watch('src/*.html', {delay: 500}, minifyHTML);
-watch('src/sass/*.scss', {delay: 500}, runSass);
-watch('src/script/js/*.js', {delay: 500}, operateJS);
+exports.build = series(runSass, minifyHTML, operateJS, minifyImg);
+exports.default = series(runSass, minifyHTML, operateJS, minifyImg, watchOn);
+
+
+

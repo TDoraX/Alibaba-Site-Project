@@ -22,3 +22,9 @@
     font: 12px/1.5 'Hiragino Sans GB','microsoft yahei',arial,sans-serif;
     -webkit-font-smoothing: antialiased;
 }
+
+@mixin text-overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
