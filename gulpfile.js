@@ -8,6 +8,9 @@ const img = require('gulp-imagemin');
 const compass = require('gulp-compass');
 const css = require('gulp-clean-css');
 
+const requirejs = require('requirejs');
+const rjs = require('gulp-requirejs');
+
 function runSass() {
     return src('src/sass/*.scss')
         .pipe(compass({
@@ -28,11 +31,27 @@ function minifyHTML() {
         .pipe(dest('dist/'));
 }
 
+
+// function requirejsBuild(done) {
+//     requirejs.optimize({
+//         baseUrl: 'src/script/js',
+//         name: 'app',
+//         preserveLicenseComments: false,
+//         removeCombined: false,
+//         paths: {
+//             jquery: '../thirdplugins/jquery.min',
+//             app: './app'
+//         },
+//         out: 'src/script/js/bundle.js'
+//     });
+//     done();
+// }
+
 function operateJS() {
     return src('src/script/js/*.js')
-        .pipe(concat('bundle.js'))
+        .pipe(concat('all.js'))
         .pipe(dest('dist/script/js/'))
-        .pipe(rename('bundle.min.js'))
+        .pipe(rename('app.js'))
         .pipe(uglify())
         .pipe(dest('dist/script/js/'));
 }
@@ -46,12 +65,14 @@ function minifyImg() {
 function watchOn() {
     watch('src/*.html', {delay: 500}, minifyHTML);
     watch('src/sass/*.scss', {delay: 500}, runSass);
+    // watch('src/script/js/*.js', {delay: 500}, requirejsBuild);
     watch('src/script/js/*.js', {delay: 500}, operateJS);
     watch('src/img/*', {delay: 500}, minifyImg);
 }
 
 exports.build = series(runSass, minifyHTML, operateJS, minifyImg);
 exports.default = series(runSass, minifyHTML, operateJS, minifyImg, watchOn);
+// exports.compileJS = series(requirejsBuild);
 
 
 

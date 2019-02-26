@@ -10,8 +10,10 @@
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-rename": "^1.4.0",
+    "gulp-requirejs": "^1.2.1",
     "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.1",
+    "requirejs": "^2.3.6"
   },
   "devDependencies": {
     "gulp-imagemin": "^5.0.3",

@@ -1,0 +1,12 @@
+require.config({
+    baseUrl:'https://cdnjs.cloudflare.com/ajax/libs/',//基路径，模块的共有的路径。
+    paths:{
+        'jquery':'jquery/1.12.4/jquery',
+        'jqCookie':'jquery-cookie/1.4.1/jquery.cookie',
+        'jqLazy':'jquery.lazyload/1.9.1/jquery.lazyload.min'
+    },
+    shim:{
+        exports:'',
+        dep:['jquery']
+    }
+});

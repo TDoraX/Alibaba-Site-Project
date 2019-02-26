@@ -6,6 +6,7 @@
             width: 200px;
             height: 550px;
             margin-top: 20px;
+            position: relative;
 
             #subnav {
                 li::after {
@@ -17,6 +18,16 @@
 
                     span {
                         width: 6px;
+                    }
+                }
+                li.current {
+                    color: #fff;
+                    background-color: #ff6000;
+                    * {
+                        color: #fff;
+                    }
+                    a:hover {
+                        color: #ffcf6b!important;
                     }
                 }
 
