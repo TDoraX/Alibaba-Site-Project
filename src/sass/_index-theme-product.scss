@@ -1,0 +1,11 @@
+.theme-product {
+    .theme-header {
+        @include module-header-init;
+        .theme-title {
+            @include module-header-title;
+        }
+        .theme-subtitle {
+            @include module-header-subtitle;
+        }
+    }
+}

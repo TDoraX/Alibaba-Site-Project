@@ -1,0 +1,12 @@
+.ad-1 {
+    padding: 20px 0;
+    height: 90px;
+    a {
+        &:first-of-type {
+            float: left;
+        }
+        &:last-of-type {
+            float: right;
+        }
+    }
+}

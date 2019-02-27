@@ -28,3 +28,23 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+@mixin module-header-init {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+@mixin module-header-title {
+    float: left;
+    font-size: 20px;
+    color: #333;
+    margin-right: 14px;
+}
+
+@mixin module-header-subtitle {
+    @include font-init;
+    float: left;
+    margin-top: 9px;
+    color: #999;
+}

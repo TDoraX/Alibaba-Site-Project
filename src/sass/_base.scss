@@ -4,7 +4,6 @@
 @import "compass/utilities";
 @import "font";
 @import "mixin";
-@import "lofty";
 
 $orange: #ff7300;
 $silver: #f7f7f7;
@@ -17,7 +16,7 @@ $silver: #f7f7f7;
     @include clear-fix;
 }
 
-.html, .body, a, span, em {
+.html, .body, a, span, em, div {
     @include font-init;
 }
 
@@ -28,6 +27,12 @@ $silver: #f7f7f7;
 .container {
     margin: 0 auto;
     width: 1200px;
+}
+
+.container-s {
+    margin: 0 auto;
+    width: 1200px;
+    padding: 20px 0;
 }
 
 .block-g {
@@ -50,5 +55,5 @@ a {
 }
 
 .arrow-down {
-    background: url("../img/arrow.png") right 6px no-repeat;
+    background: url("../img/arrow.png") right 13px no-repeat;
 }

@@ -6,14 +6,20 @@
     font-size: 12px;
     border-bottom: 1px solid #ddd;
     color: #555;
+    .container {
+        height: 100%;
+    }
 
     .top-bar-l {
+        float: left;
+        line-height: 30px;
         .mobile, .top-info {
             float: left;
-
+            line-height: inherit;
             li {
                 float: left;
                 padding-right: 10px;
+
             }
 
             .bonus {
@@ -45,13 +51,14 @@
             a {
                 @include inline-block;
                 padding-right: 12px;
+                line-height: 30px;
             }
 
             i {
                 display: block;
                 float: left;
                 font-size: 14px;
-                margin: -2px 2px 0 0;
+                margin: 0 2px 0 -8px;
             }
 
             #product-num {

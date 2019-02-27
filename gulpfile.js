@@ -66,12 +66,12 @@ function watchOn() {
     watch('src/*.html', {delay: 500}, minifyHTML);
     watch('src/sass/*.scss', {delay: 500}, runSass);
     // watch('src/script/js/*.js', {delay: 500}, requirejsBuild);
-    watch('src/script/js/*.js', {delay: 500}, operateJS);
+    // watch('src/script/js/*.js', {delay: 500}, operateJS);
     watch('src/img/*', {delay: 500}, minifyImg);
 }
 
 exports.build = series(runSass, minifyHTML, operateJS, minifyImg);
-exports.default = series(runSass, minifyHTML, operateJS, minifyImg, watchOn);
+exports.default = series(runSass, minifyHTML, minifyImg, watchOn);
 // exports.compileJS = series(requirejsBuild);
 
 
