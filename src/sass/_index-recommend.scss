@@ -1,0 +1,134 @@
+.recommend {
+    .recommend-header {
+        @include module-header-init;
+        .recommend-title {
+            @include module-header-title;
+        }
+        .recommend-subtitle {
+            @include module-header-subtitle;
+        }
+    }
+    .recommend-body {
+        margin: 9px -24px 0 0;
+        overflow: hidden;
+        .recommend-item {
+            width: 590px;
+            display: inline-block;
+            background: #fff;
+            margin-right: 20px;
+            height: 245px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.03);
+            .recommend-shop {
+                display: block;
+                height: 85px;
+                padding: 26px 30px;
+                position: relative;
+                box-sizing: border-box;
+                background: #FAFAFA;
+                .shop-title {
+                    display: inline-block;
+                    padding-right: 18px;
+                    color: #333;
+                    font-size: 12px;
+                    line-height: 12px;
+                    height: 36px;
+                    .shop-main-title {
+                        font-weight: 700;
+                        color: #333;
+                        font-size: 14px;
+                    }
+                    .shop-sub-title {
+                        color: #666;
+                        margin-top: 10px;
+                    }
+                }
+                .shop-info {
+                    position: absolute;
+                    right: 20px;
+                    display: inline-block;
+                    vertical-align: top;
+                    overflow: hidden;
+                    .shop-info-item {
+                        float: left;
+                        padding: 0 9px;
+                        text-align: center;
+                        .info-item-name {
+                            line-height: 12px;
+                            margin-top: 2px;
+                            color: #666;
+                        }
+                        .info-item-num {
+                            line-height: 12px;
+                            margin-top: 8px;
+                            &.down {
+                                color: #42a35e;
+                            }
+                            &.up {
+                                color: #ff6000;
+                            }
+                            &.medium {
+                                color: #666;
+                            }
+                        }
+                    }
+                }
+            }
+            .recommend-content {
+                overflow: hidden;
+                padding: 0 30px;
+                .recommend-image {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 448px;
+                    margin-top: 28px;
+                    float: left;
+                    .recommend-image-container {
+                        position: relative;
+                        width: 100px;
+                        height: 100px;
+                        background: #f8f8f8;
+                        img {
+                            width: 100px;
+                        }
+                        .image-cover {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100px;
+                            height: 100px;
+                            background: #ff6000;
+                            opacity: 0;
+                            transition: all .3s;
+                            box-sizing: border-box;
+                            padding-left: 13px;
+                            color: #fff;
+                            .item-price {
+                                margin-top: 53px;
+                                font-size: 14px;
+                            }
+                            .item-ordered {
+                                font-size: 12px;
+                                line-height: 12px;
+                            }
+                        }
+                    }
+                }
+                .recommend-item-total {
+                    float: right;
+                    text-align: center;
+                    .count {
+                        font-size: 24px;
+                        color: #ff6000;
+                        margin-top: 49px;
+                    }
+                    .text {
+                        line-height: 12px;
+                        margin-top: 6px;
+                        color: #939393;
+                    }
+                }
+            }
+        }
+    }
+}

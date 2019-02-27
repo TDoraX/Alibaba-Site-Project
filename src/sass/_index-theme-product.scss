@@ -8,4 +8,50 @@
             @include module-header-subtitle;
         }
     }
+    .theme-body {
+        width: 100%;
+        margin-top: 12px;
+        .theme-container {
+            position: relative;
+            float: left;
+            width: 285px;
+            height: 270px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 8px;
+            padding: 35px 0;
+            margin: 0 15px 20px 0;
+            overflow: hidden;
+            .theme-item-title {
+                background: #F55443;
+                position: absolute;
+                top: 12px;
+                left: 0;
+                line-height: 26px;
+                color: rgb(255, 255, 255);
+                font-size: 14px;
+                font-weight: 700;
+                padding: 0 12px;
+            }
+            .theme-item-list {
+                float: left;
+                width: 33%;
+                margin: 14px 0 12px;
+                text-align: center;
+                .theme-item-img > img {
+                    width: 65px;
+                    height: 65px;
+                }
+                .theme-item-name {
+                    margin-top: 10px;
+                    color: #333333;
+                    font-size: 14px;
+                }
+                .theme-sub-name {
+                    margin: -2px;
+                    color: #999999;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 }

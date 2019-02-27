@@ -63,7 +63,7 @@ function minifyImg() {
 }
 
 function watchOn() {
-    watch('src/*.html', {delay: 500}, minifyHTML);
+    watch('src/*.html', {delay: 1000}, minifyHTML);
     watch('src/sass/*.scss', {delay: 500}, runSass);
     // watch('src/script/js/*.js', {delay: 500}, requirejsBuild);
     // watch('src/script/js/*.js', {delay: 500}, operateJS);

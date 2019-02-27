@@ -1,5 +1,18 @@
-.ad-1 {
+.ad {
     padding: 20px 0;
+    height: 90px;
+    a {
+        &:first-of-type {
+            float: left;
+        }
+        &:last-of-type {
+            float: right;
+        }
+    }
+}
+
+.ad-s {
+    padding-bottom: 20px;
     height: 90px;
     a {
         &:first-of-type {

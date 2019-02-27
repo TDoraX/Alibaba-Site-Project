@@ -30,6 +30,7 @@ $silver: #f7f7f7;
 }
 
 .container-s {
+    overflow: hidden;
     margin: 0 auto;
     width: 1200px;
     padding: 20px 0;
@@ -48,6 +49,7 @@ footer {
 a {
     text-decoration: none;
     color: #555;
+    cursor: pointer;
 
     &:hover {
         color: $orange;

@@ -1,0 +1,14 @@
+.guess-like {
+    .guess-header {
+        @include module-header-init;
+        .guess-title {
+            @include module-header-title;
+        }
+        .guess-subtitle {
+            @include module-header-subtitle;
+        }
+    }
+    .guess-body {
+
+    }
+}
