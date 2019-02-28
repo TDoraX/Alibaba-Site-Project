@@ -9,6 +9,79 @@
         }
     }
     .guess-body {
-
+        overflow: hidden;
+        margin-left: -20px;
+        .guess-item {
+            float: left;
+            width: 222px;
+            height: 313px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            font-size: 0;
+            position: relative;
+            border: 1px solid #f2f2f2;
+            .image-container {
+                display: block;
+                width: 100%;
+                height: 222px;
+                img {
+                    width: 100%;
+                    height: 222px;
+                }
+            }
+            .text-container {
+                overflow: hidden;
+                font-size: 12px;
+                margin-top: 12px;
+                padding: 0 14px;
+                .text-price {
+                    float: left;
+                    font-size: 14px;
+                    color: $orange;
+                    font-weight: 700;
+                    .unit {
+                        float: left;
+                        font-size: 12px;
+                        color: $orange;
+                        font-weight: 700;
+                    }
+                    .price {
+                        float: left;
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: $orange;
+                    }
+                }
+            }
+            .text-content {
+                font-size: 12px;
+                color: #666;
+                margin-top: 4px;
+                padding: 0 14px;
+                display: block;
+                height: 36px;
+                overflow: hidden;
+            }
+            .hover-link {
+                display: none;
+                opacity: 0.9;
+                position: absolute;
+                width: 222px;
+                height: 93px;
+                bottom: 0;
+                left: 0;
+                background: #ff7300;
+                text-align: center;
+                color: #fff;
+                .first-line {
+                    font-size: 18px;
+                    margin-top: 18px;
+                }
+                .last-line {
+                    font-size: 12px;
+                }
+            }
+        }
     }
 }
