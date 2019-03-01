@@ -10,6 +10,7 @@ define(['config'], function (config) {
             this.scrollSearch();
             this.toggleMenu();
             this.slideShow();
+            this.dataInit();
         };
 
         // 滚动固定搜索栏功能
@@ -96,6 +97,24 @@ define(['config'], function (config) {
                     }
                 })
             })
+        };
+
+        // 商品的获取（首页 - 猜你喜欢）
+        IndexModule.prototype.dataInit = function () {
+            $.ajax({
+                url: 'http://10.31.162.43/ali1688/php/information.php',
+                dataType: 'json'
+            }).done(function (data) {
+                var guessItem = $('.guess-item');
+                $.each(data, function (index, value) {
+                    guessItem.eq(index)
+                        .attr('data-id', value.sid)
+                        .find('.image-container img')
+                        .attr('src', value.img);
+                    guessItem.eq(index).find('.price').html(value.price);
+                    guessItem.eq(index).find('.text-content').html(value.title);
+                });
+            });
         };
 
         // 初始化首页模块

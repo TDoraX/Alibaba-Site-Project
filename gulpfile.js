@@ -7,6 +7,7 @@ const rename = require('gulp-rename');
 const img = require('gulp-imagemin');
 const compass = require('gulp-compass');
 const css = require('gulp-clean-css');
+const babel = require('gulp-babel');
 
 const requirejs = require('requirejs');
 const rjs = require('gulp-requirejs');
@@ -49,6 +50,9 @@ function minifyHTML() {
 
 function operateJS() {
     return src('src/script/js/*.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(concat('all.js'))
         .pipe(dest('dist/script/js/'))
         .pipe(rename('app.js'))
