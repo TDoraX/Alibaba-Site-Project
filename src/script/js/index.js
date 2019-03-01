@@ -1,8 +1,9 @@
+"use strict";
 define(['config'], function (config) {
     require(['jquery'], function ($) {
         // 首页模块的构造器
         function IndexModule() {
-            this._this = this;
+
         }
 
         // 首页的初始化方法
@@ -10,14 +11,15 @@ define(['config'], function (config) {
             this.scrollSearch();
             this.toggleMenu();
             this.slideShow();
+            this.recommendDataInit();
             this.dataInit();
         };
 
         // 滚动固定搜索栏功能
         IndexModule.prototype.scrollSearch = function () {
-            var fixedBar = $('#fixed-search-bar');
+            const fixedBar = $('#fixed-search-bar');
             // 开关变量保证动画只触发一次
-            var derail = false;
+            let derail = false;
             $(window).on('scroll', function () {
                 if ($(window).scrollTop() >= 200 && !derail) {
                     derail = true;
@@ -36,9 +38,9 @@ define(['config'], function (config) {
 
         // 左侧菜单栏切换功能
         IndexModule.prototype.toggleMenu = function () {
-            var subNav = $('#subnav');
-            var floatMenu = $('.float-menu');
-            var lists = $('#subnav > li').not(floatMenu);
+            const subNav = $('#subnav');
+            const floatMenu = $('.float-menu');
+            const lists = $('#subnav > li').not(floatMenu);
             subNav.on('mouseover', function () {
                 floatMenu.stop(true, true).show();
             });
@@ -59,11 +61,11 @@ define(['config'], function (config) {
 
         // 幻灯片功能
         IndexModule.prototype.slideShow = function () {
-            var slides = $('.slide-show ul > li');
-            var prev = $('.slide-show .prev');
-            var next = $('.slide-show .next');
-            var slideButtons = $('.slide-show .slide-btn-list .slide-btn');
-            var playNum = 0;
+            const slides = $('.slide-show ul > li');
+            const prev = $('.slide-show .prev');
+            const next = $('.slide-show .next');
+            const slideButtons = $('.slide-show .slide-btn-list .slide-btn');
+            let playNum = 0;
             slides.eq(0).animate({opacity: 1}, 200);
             next.on('click', function () {
                 slides.eq(playNum).animate({opacity: 0}, 200);
@@ -99,13 +101,52 @@ define(['config'], function (config) {
             })
         };
 
+        // 同店商品的获取
+        IndexModule.prototype.recommendDataInit = function () {
+            $.ajax({
+                url: 'http://10.31.162.43/ali1688/php/recommend.php',
+                dataType: 'json'
+            }).done(function (data) {
+                const recommendItem = $('.recommend-image-container');
+                const recommendAll = $('.recommend-item');
+                let derail = false;
+                recommendAll.each(function (allIndex) {
+
+                    $.each(data, function (index, value) {
+                        recommendAll.eq(allIndex).find('.recommend-image-container').eq(index)
+                            .find('img').attr('src', value.img);
+                        recommendAll.eq(allIndex).find('.recommend-image-container').eq(index)
+                            .find('.item-price').text('￥ ' + value.price);
+                        recommendAll.eq(allIndex).find('.recommend-image-container').eq(index)
+                            .find('.item-ordered').text('交易量：' + value.salenum);
+                    });
+                    recommendAll.eq(allIndex).find('.recommend-image-container').each(function (index) {
+                        recommendAll.eq(allIndex).find('.recommend-image-container').eq(index).on('mouseover', function () {
+                            if (!derail) {
+                                $(this).find('.image-cover').stop(true, true).animate({opacity: 1}, 200);
+                                derail = true;
+                            }
+
+                        });
+                        recommendAll.eq(allIndex).find('.recommend-image-container').eq(index).on('mouseout', function () {
+                            if (derail) {
+                                $(this).find('.image-cover').stop(true, true).animate({opacity: 0}, 200);
+                                derail = false;
+                            }
+
+                        });
+                    });
+                });
+            });
+        };
+
         // 商品的获取（首页 - 猜你喜欢）
         IndexModule.prototype.dataInit = function () {
             $.ajax({
                 url: 'http://10.31.162.43/ali1688/php/information.php',
                 dataType: 'json'
             }).done(function (data) {
-                var guessItem = $('.guess-item');
+                const guessItem = $('.guess-item');
                 $.each(data, function (index, value) {
                     guessItem.eq(index)
                         .attr('data-id', value.sid)
